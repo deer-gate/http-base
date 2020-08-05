@@ -62,7 +62,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 
 使用Chrome浏览器，发送一个Get请求，打开开发者工具，可以看到浏览器生成的HTTP信息如下：
 
-![get](/Users/shangyehua/Works/ebtech/mycourse/http/get.png)
+![get](get.png)
 
 红色框标注的，就是**请求行**，可以看到，它有三部分组成:
 
@@ -72,7 +72,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 
 这三个部分通常使用空格（space）来分隔，最后要用 CRLF 换行表示结束。
 
-![start line](/Users/shangyehua/Works/ebtech/mycourse/http/start-line.png)
+![start line](start-line.png)
 
 
 
@@ -84,11 +84,11 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 2. 状态码：一个三位数，用代码的形式表示处理的结果，比如 200 是成功，500 是服务器错误；
 3. 原因(可选)：作为数字状态码补充，是更详细的解释文字，帮助人理解原因。
 
-![status line](/Users/shangyehua/Works/ebtech/mycourse/http/start-line-response.png)
+![status line](start-line-response.png)
 
 使用Telnet工具和Wireshark抓取HTTP通信过程，截图如下：
 
-![telnet-get](/Users/shangyehua/Works/ebtech/mycourse/http/telnet-get.png)
+![telnet-get](telnet-get.png)
 
 使用Wireshark抓取的请求内容如下：
 
@@ -104,7 +104,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 
 请求头和响应头的结构是基本一样的，唯一的区别是起始行。它们的结构分别如下：
 
-![request header](/Users/shangyehua/Works/ebtech/mycourse/http/header-req.png)
+![request header](header-req.png)
 
 
 
@@ -123,7 +123,7 @@ HTTP 协议规定报文必须有 header，但可以没有 body，而且在 heade
 
 比如下图，在Field Name和“:”之间，多加一个空格，请求会出现错误，截图如下：
 
-<img src="/Users/shangyehua/Works/ebtech/mycourse/http/telnet-header-400.png" alt="telnet-header-400" style="zoom:67%;" />
+<img src="telnet-header-400.png" alt="telnet-header-400" style="zoom:67%;" />
 
 #### 4.3.2 头部使用场景
 
@@ -144,11 +144,11 @@ Header中添加Authorization字段，格式为：`Authorization: <type> <credent
 
 使用telnet，直接请求，结果如下：
 
-![basic no header](/Users/shangyehua/Works/ebtech/mycourse/http/telnet-basic-noheader.png)
+![basic no header](telnet-basic-noheader.png)
 
 添加Authorization之后，结果如下：
 
-![basic with header](/Users/shangyehua/Works/ebtech/mycourse/http/telnet-basic.png)
+![basic with header](telnet-basic.png)
 
 
 
@@ -186,25 +186,25 @@ GET请求在RFC规范中Entity是未规定的，[参阅: GET规范](https://www.
 
 - x-www-form-urlencoded格式，在网页上，form如果使用POST提交，没有指定body格式时，默认是此类型，不能上传文件。
 
-![postman 设置](/Users/shangyehua/Works/ebtech/mycourse/http/post-form-postman.png)
+![postman 设置](post-form-postman.png)
 
 使用Wireshark抓取的报文
 
-![form wireshark](/Users/shangyehua/Works/ebtech/mycourse/http/post-form-ws.png)
+![form wireshark](post-form-ws.png)
 
 
 
 - multipart/form-data，支持文件上传
 
-  ![multipart postman](/Users/shangyehua/Works/ebtech/mycourse/http/post-multiform-postman.png)
+  ![multipart postman](post-multiform-postman.png)
 
 使用Wireshark抓取的报文
 
-![multipart ws](/Users/shangyehua/Works/ebtech/mycourse/http/post-multiform-ws.png)
+![multipart ws](post-multiform-ws.png)
 
 完整报文如下:
 
-![multipart data](/Users/shangyehua/Works/ebtech/mycourse/http/post-multiform-bw.png)
+![multipart data](post-multiform-bw.png)
 
 
 
